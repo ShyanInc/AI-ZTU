@@ -38,12 +38,12 @@ plt.legend()
 plt.show()
 
 # Оцінка якості моделі за допомогою кількох метрик
-print("Linear regressor performance:")
-print("Mean absolute error =", round(sm.mean_absolute_error(y_test, y_test_pred), 2))
-print("Mean squared error =", round(sm.mean_squared_error(y_test, y_test_pred), 2))
-print("Median absolute error =", round(sm.median_absolute_error(y_test, y_test_pred), 2))
-print("Explain variance score =", round(sm.explained_variance_score(y_test, y_test_pred), 2))
-print("R2 score =", round(sm.r2_score(y_test, y_test_pred), 2))
+print("Результати лінійного регресора:")
+print("Середня абсолютна похибка =", round(sm.mean_absolute_error(y_test, y_test_pred), 2))
+print("Середньоквадратична похибка =", round(sm.mean_squared_error(y_test, y_test_pred), 2))
+print("Медіанна абсолютна похибка =", round(sm.median_absolute_error(y_test, y_test_pred), 2))
+print("Коефіцієнт детермінації =", round(sm.explained_variance_score(y_test, y_test_pred), 2))
+print("R2 =", round(sm.r2_score(y_test, y_test_pred), 2))
 
 # Визначення шляху для збереження моделі
 output_model_file = 'model.pkl'
@@ -58,7 +58,7 @@ with open(output_model_file, 'rb') as f:
 
 # Прогнозування за допомогою завантаженої моделі
 y_test_pred_new = regressor_model.predict(X_test)
-print("\nNew mean absolute error =", round(sm.mean_absolute_error(y_test, y_test_pred_new), 2))
+print("\nНова середня абсолютна похибка =", round(sm.mean_absolute_error(y_test, y_test_pred_new), 2))
 
 # Трансформація даних для поліноміальної регресії з використанням ступеня 10
 polynomial = PolynomialFeatures(degree=10)
@@ -74,4 +74,4 @@ poly_linear_model = linear_model.LinearRegression()
 poly_linear_model.fit(X_train_transformed, y_train)
 
 # Прогнозування для нового значення за допомогою поліноміальної моделі
-print("\nPolynomial regression prediction for datapoint", datapoint, ":\n", poly_linear_model.predict(poly_datapoint))
+print("\nПрогноз поліноміальної регресії для точки даних", datapoint, ":\n", poly_linear_model.predict(poly_datapoint))

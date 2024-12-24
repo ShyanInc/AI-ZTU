@@ -65,7 +65,7 @@ y_pred_poly = classifier_poly.predict(X_test)
 classifier_rbf.fit(X_train, y_train)
 y_pred_rbf = classifier_rbf.predict(X_test)
 
-print("\nГаусове ядро (RBF):")
+print("\n(RBF):")
 print(f"Accuracy: {accuracy_score(y_test, y_pred_rbf) * 100:.2f}%")
 print(f"Precision: {precision_score(y_test, y_pred_rbf) * 100:.2f}%")
 print(f"Recall: {recall_score(y_test, y_pred_rbf) * 100:.2f}%")

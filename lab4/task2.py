@@ -4,7 +4,7 @@ from sklearn import linear_model
 import sklearn.metrics as sm
 import matplotlib.pyplot as plt
 # Шлях до файлу з даними
-input_file = 'data_regr_5.txt'
+input_file = 'data_regr_1.txt'
 # Завантаження вхідних даних з файлу
 data = np.loadtxt(input_file, delimiter=',')
 X, y = data[:, 0].reshape(-1, 1), data[:, 1]  # Виділення вхідної змінної (X) та цільової змінної (y)

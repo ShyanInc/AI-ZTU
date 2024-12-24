@@ -5,7 +5,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 # Генерація випадкових даних
-m = 100  # Кількість точок
+m = 60  # Кількість точок
 X = np.linspace(-3, 3, m)  # Створення рівномірного простору даних від -3 до 3
 y = 4 + np.sin(X) + np.random.uniform(-0.6, 0.6, m)  # Цільова змінна з шумом
 
@@ -53,9 +53,9 @@ mse_linear = mean_squared_error(y, y_pred_linear)  # Обчислення сер
 r2_linear = r2_score(y, y_pred_linear)  # Обчислення коефіцієнта детермінації
 mae_linear = mean_absolute_error(y, y_pred_linear)  # Обчислення середньої абсолютної похибки
 print("Лінійна регресія:")
-print("Mean Squared Error (MSE):", round(mse_linear, 2))
-print("R2 score:", round(r2_linear, 2))
-print("Mean Absolute Error (MAE):", round(mae_linear, 2))
+print("Середньоквадратична похибка:", round(mse_linear, 2))
+print("R2:", round(r2_linear, 2))
+print("Середня абсолютна похибка:", round(mae_linear, 2))
 
 # Виведення коефіцієнтів та перехоплення для лінійної регресії
 print("Коефіцієнти лінійної регресії:", linear_regressor.coef_)
@@ -66,9 +66,9 @@ mse_poly = mean_squared_error(y, y_pred_poly)  # Обчислення серед
 r2_poly = r2_score(y, y_pred_poly)  # Обчислення коефіцієнта детермінації для поліноміальної регресії
 mae_poly = mean_absolute_error(y, y_pred_poly)  # Обчислення середньої абсолютної похибки для поліноміальної регресії
 print("\nПоліноміальна регресія:")
-print("Mean Squared Error (MSE):", round(mse_poly, 2))
-print("R2 score:", round(r2_poly, 2))
-print("Mean Absolute Error (MAE):", round(mae_poly, 2))
+print("Середньоквадратична похибка:", round(mse_poly, 2))
+print("R2:", round(r2_poly, 2))
+print("Середня абсолютна похибка:", round(mae_poly, 2))
 
 # Виведення коефіцієнтів та перехоплення для поліноміальної регресії
 print("Коефіцієнти поліноміальної регресії:", poly_regressor.coef_)
